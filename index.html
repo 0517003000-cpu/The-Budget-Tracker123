@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>50/30/20 Budget Template</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 contenteditable="true">50/30/20 Budget Template</h1>
+
+<table class="topTable">
+<tr>
+<th>Name</th>
+<td contenteditable="true" id="name"></td>
+</tr>
+
+<tr>
+<th>Monthly Income after taxes</th>
+<td>$ <span contenteditable="true" id="income" oninput="calculate()"></span></td>
+</tr>
+</table>
+
+
+<div class="container">
+
+<!-- NEEDS -->
+<table class="budgetTable">
+
+<tr>
+<th colspan="2">50% Needs</th>
+</tr>
+
+<tr>
+<td>Available funds</td>
+<td id="needsBudget">$0</td>
+</tr>
+
+<tr><td contenteditable="true">Rent / Mortgage</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Utilities</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Groceries</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Insurance</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Transportation</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Health Insurance</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Debt payments</td><td contenteditable="true" class="needs" oninput="calculate()"></td></tr>
+
+<tr>
+<td>Total Needs Expenses</td>
+<td id="needsTotal">$0</td>
+</tr>
+
+<tr>
+<td>Over / Under Budget</td>
+<td id="needsStatus">-</td>
+</tr>
+
+</table>
+
+
+<!-- WANTS -->
+<table class="budgetTable">
+
+<tr>
+<th colspan="2">30% Wants</th>
+</tr>
+
+<tr>
+<td>Available funds</td>
+<td id="wantsBudget">$0</td>
+</tr>
+
+<tr><td contenteditable="true">Entertainment</td><td contenteditable="true" class="wants" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Dining out</td><td contenteditable="true" class="wants" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Hobbies</td><td contenteditable="true" class="wants" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Vacations</td><td contenteditable="true" class="wants" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Streaming services</td><td contenteditable="true" class="wants" oninput="calculate()"></td></tr>
+
+<tr>
+<td>Total Wants Expenses</td>
+<td id="wantsTotal">$0</td>
+</tr>
+
+<tr>
+<td>Over / Under Budget</td>
+<td id="wantsStatus">-</td>
+</tr>
+
+</table>
+
+
+<!-- SAVINGS -->
+<table class="budgetTable">
+
+<tr>
+<th colspan="2">20% Savings</th>
+</tr>
+
+<tr>
+<td>Available funds</td>
+<td id="savingsBudget">$0</td>
+</tr>
+
+<tr><td contenteditable="true">Emergency fund</td><td contenteditable="true" class="savings" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Retirement savings</td><td contenteditable="true" class="savings" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Investments</td><td contenteditable="true" class="savings" oninput="calculate()"></td></tr>
+<tr><td contenteditable="true">Extra debt payments</td><td contenteditable="true" class="savings" oninput="calculate()"></td></tr>
+
+<tr>
+<td>Total Savings Expenses</td>
+<td id="savingsTotal">$0</td>
+</tr>
+
+<tr>
+<td>Over / Under Budget</td>
+<td id="savingsStatus">-</td>
+</tr>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
