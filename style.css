@@ -1,0 +1,52 @@
+function calculate(){
+
+let income = Number(document.getElementById("income").innerText) || 0
+
+let needsBudget = income * 0.5
+let wantsBudget = income * 0.3
+let savingsBudget = income * 0.2
+
+document.getElementById("needsBudget").innerText = "$ " + needsBudget
+document.getElementById("wantsBudget").innerText = "$ " + wantsBudget
+document.getElementById("savingsBudget").innerText = "$ " + savingsBudget
+
+
+let needsTotal = 0
+document.querySelectorAll(".needs").forEach(e=>{
+needsTotal += Number(e.innerText)||0
+})
+
+let wantsTotal = 0
+document.querySelectorAll(".wants").forEach(e=>{
+wantsTotal += Number(e.innerText)||0
+})
+
+let savingsTotal = 0
+document.querySelectorAll(".savings").forEach(e=>{
+savingsTotal += Number(e.innerText)||0
+})
+
+document.getElementById("needsTotal").innerText = "$ " + needsTotal
+document.getElementById("wantsTotal").innerText = "$ " + wantsTotal
+document.getElementById("savingsTotal").innerText = "$ " + savingsTotal
+
+updateStatus("needs",needsTotal,needsBudget)
+updateStatus("wants",wantsTotal,wantsBudget)
+updateStatus("savings",savingsTotal,savingsBudget)
+
+}
+
+function updateStatus(type,total,budget){
+
+let element = document.getElementById(type+"Status")
+
+if(total > budget){
+element.innerText = "Over Budget"
+element.style.color = "red"
+}
+else{
+element.innerText = "Under Budget"
+element.style.color = "green"
+}
+
+}
